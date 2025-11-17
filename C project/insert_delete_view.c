@@ -60,7 +60,7 @@ struct item *insert_item(struct item*head,int pos,int id,char *name,int quantity
         return new;
 
     }
-    printf("heekkko\n");
+    
     struct item *new=malloc(sizeof(struct item));
     struct item *temp=head;
     int i=0;
@@ -133,5 +133,6 @@ void view_items(struct item *head){
         printf("\n------------------------------------------------\n");
         head=head->next;
     }
+
 
 }
