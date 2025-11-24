@@ -1,10 +1,16 @@
 We have built a simple INVENTORY MANAGEMENT SYSTEM for a store.
 FEATURES- *Stores a list of all items
+
           *Allows user to add or remove items
+          
           *Allows user to change the price/quantity of items
+          
           *Allows user to sort the items according to price/quantity
+          
           *Allows user to check the stock for item , which returns a table with items not in stock
+
           *Allows user to search and item by name , which results in a table with the items index number, price and quantity
+          
 
 IMPLEMENTATION & EXPLANATIONS OF FUNCTIONS -  * The items are stored as a linked list and each node of the list consists of item name , price ,quantity and a pointer to the next node
                                             * (VIEW ITEMS AND SAVE TABLE FUNCTION)The table consisting of all items with their info is made on a separate file using file i/o (fopen and fprintf)
