@@ -1,5 +1,6 @@
 *We have built a simple INVENTORY MANAGEMENT SYSTEM for a store.
 *FEATURES- 
+
           *Stores a list of all items
 
           *Allows user to add or remove items
@@ -14,6 +15,7 @@
           
 
 *IMPLEMENTATION & EXPLANATIONS OF FUNCTIONS - 
+
                                             * The items are stored as a linked list and each node of the list consists of item name , price ,quantity and a pointer to the next node
                                             * (VIEW ITEMS AND SAVE TABLE FUNCTION)The table consisting of all items with their info is made on a separate file using file i/o (fopen and fprintf)
                                             * (INSERT ITEM FUNCTION)To add an item , its basically a problem of adding a node to linked list . To add a node , we just use a loop to find the pointer to the node just before the node where we want a new node to be inserted
@@ -29,6 +31,7 @@
                                             *(SEARCH ITEM BY NAME FUNCTION)Searching an item by name is done through a loop which breaks when it finds the name . A table is made on a separate file showing the search result.
 
 *FUNCTION PARAMETERS-  
+
                      *VIEW ITEMS FUNCTION - pointer to head node
 
                      *SAVE TABLE FUNCTION -pointer to filename and head
