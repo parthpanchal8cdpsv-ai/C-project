@@ -13,7 +13,8 @@ FEATURES-
           *Allows user to search and item by name , which results in a table with the items index number, price and quantity
           
 
-IMPLEMENTATION & EXPLANATIONS OF FUNCTIONS -  * The items are stored as a linked list and each node of the list consists of item name , price ,quantity and a pointer to the next node
+IMPLEMENTATION & EXPLANATIONS OF FUNCTIONS - 
+                                            * The items are stored as a linked list and each node of the list consists of item name , price ,quantity and a pointer to the next node
                                             * (VIEW ITEMS AND SAVE TABLE FUNCTION)The table consisting of all items with their info is made on a separate file using file i/o (fopen and fprintf)
                                             * (INSERT ITEM FUNCTION)To add an item , its basically a problem of adding a node to linked list . To add a node , we just use a loop to find the pointer to the node just before the node where we want a new node to be inserted
                                             
