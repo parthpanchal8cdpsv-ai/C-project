@@ -51,9 +51,9 @@ FEATURES-
 
 CONTRIBUTIONS -
 
-               Parth Panchal : Wrote insert item function , update item function , save table ,view items function implemented file i/o , made separate header files for better readibility of code.
-               Swarup : Provided the idea for this project . Wrote search item by name function.
-               Vijay Simha Reddy : Wrote check stock function .
+               Parth Panchal : Wrote insert item function , update item function ,save table ,view items function implemented file i/o , made separate header files for better readibility of code.
+               Swarup : Provided the idea for this project . Wrote search item by name function and delete item function .
+               Vijay Simha Reddy : Wrote check stock function . Fixed bugs.
                      
                 
                 
