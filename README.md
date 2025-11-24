@@ -1,5 +1,6 @@
 We have built a simple INVENTORY MANAGEMENT SYSTEM for a store.
-FEATURES- *Stores a list of all items
+FEATURES- 
+          *Stores a list of all items
 
           *Allows user to add or remove items
           
@@ -26,7 +27,8 @@ IMPLEMENTATION & EXPLANATIONS OF FUNCTIONS -  * The items are stored as a linked
                                             
                                             *(SEARCH ITEM BY NAME FUNCTION)Searching an item by name is done through a loop which breaks when it finds the name . A table is made on a separate file showing the search result.
 
-FUNCTION PARAMETERS- *VIEW ITEMS FUNCTION - pointer to head node
+FUNCTION PARAMETERS-  
+                     *VIEW ITEMS FUNCTION - pointer to head node
 
                      *SAVE TABLE FUNCTION -pointer to filename and head
                      
