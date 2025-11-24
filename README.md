@@ -1,5 +1,6 @@
 *We have built a simple INVENTORY MANAGEMENT SYSTEM for a store.
-*FEATURES- 
+
+FEATURES- 
 
           *Stores a list of all items
 
