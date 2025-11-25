@@ -17,7 +17,6 @@ struct item* load_table(const char *filename) {
 
     char line[200];
 
-    // Skip the two header lines
     fgets(line, sizeof(line), fp);
     fgets(line, sizeof(line), fp);
 
@@ -26,15 +25,13 @@ struct item* load_table(const char *filename) {
 
     while (fgets(line, sizeof(line), fp)) {
 
-        // Skip dashed lines
         if (strstr(line, "-----") != NULL)
             continue;
 
-        // Stop before timestamp line
         if (strstr(line, "Last Modified") != NULL)
             break;
 
-        // Try to parse the line
+   
         if (sscanf(line, "%d %s %d %d", &id, name, &quantity, &price) == 4) {
 
             struct item *new = malloc(sizeof(struct item));
@@ -93,7 +90,7 @@ fclose(fp);
 int main(){
     struct item *head=load_table("tablee.txt");
     
-   /*   insertion is  at 1 based index  */
+   /*   insertion is  at 1 based index plz dont forget  */
     
    
     
@@ -218,3 +215,4 @@ int main(){
     return 0;  
 
 }
+
