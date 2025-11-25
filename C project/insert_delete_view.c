@@ -5,6 +5,17 @@
 
 
 struct item *insert_item(struct item*head,int pos,int id,char *name,int quantity,int price){
+    if(head==NULL){
+        head=malloc(sizeof(struct item));
+        head->id=1;
+        head->name=malloc(strlen(name)+1);
+        strcpy(head->name,name);
+        head->quantity=quantity;
+        head->price=price;
+        head->next=NULL;
+        return head;
+
+    }
     
     if(pos==-1){
         struct item *temp=head;
@@ -14,7 +25,8 @@ struct item *insert_item(struct item*head,int pos,int id,char *name,int quantity
         }
         temp->next=new;
         new->next=NULL;
-        new->name=name;
+        new->name=malloc(strlen(name)+1);
+        strcpy(new->name,name);
         new->quantity=quantity;
         new->price=price;
         struct item *id_set=head;
@@ -70,7 +82,8 @@ struct item *insert_item(struct item*head,int pos,int id,char *name,int quantity
     }
     new->next=temp->next;
     temp->next=new;
-    new->name=name;
+    new->name=malloc(strlen(name)+1);
+    strcpy(new->name,name);
     new->quantity=quantity;
     new->price=price;
 
