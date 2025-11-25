@@ -5,6 +5,63 @@
 #include "insert_delete_view.h"
 #include "update_search_sort.h"
 
+struct item* load_table(const char *filename) {
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        printf("No previous table found. Starting fresh.\n");
+        return NULL;
+    }
+
+    struct item *head = NULL;
+    struct item *tail = NULL;
+
+    char line[200];
+
+    // Skip the two header lines
+    fgets(line, sizeof(line), fp);
+    fgets(line, sizeof(line), fp);
+
+    int id, quantity, price;
+    char name[50];
+
+    while (fgets(line, sizeof(line), fp)) {
+
+        // Skip dashed lines
+        if (strstr(line, "-----") != NULL)
+            continue;
+
+        // Stop before timestamp line
+        if (strstr(line, "Last Modified") != NULL)
+            break;
+
+        // Try to parse the line
+        if (sscanf(line, "%d %s %d %d", &id, name, &quantity, &price) == 4) {
+
+            struct item *new = malloc(sizeof(struct item));
+            new->id = id;
+
+            new->name = malloc(strlen(name) + 1);
+            strcpy(new->name, name);
+
+            new->quantity = quantity;
+            new->price = price;
+            new->next = NULL;
+
+            if (!head)
+                head = tail = new;
+            else {
+                tail->next = new;
+                tail = new;
+            }
+        }
+    }
+
+    fclose(fp);
+    return head;
+}
+
+
+
 void save_table(const char *filename,struct item *head){
 FILE *fp=fopen(filename,"w");
 if(!fp){
@@ -34,25 +91,11 @@ fclose(fp);
 
 
 int main(){
+    struct item *head=load_table("tablee.txt");
     
-    struct item *i1=malloc(sizeof(struct item));
-    struct item *i2=malloc(sizeof(struct item));
-    struct item *head=i1;
-
-    i1->id=1;
-    i1->name="apple";
-    i1->quantity=100;
-    i1->price=20;
-    i1->next=NULL;
-
    /*   insertion is  at 1 based index  */
     
-    head=insert_item(head,2,2,"banana",120,25); 
-    head=insert_item(head,3,3,"orange",135,30);
-    head=insert_item(head,4,4,"watermelon",125,40);
-    head=insert_item(head,5,5,"mango",110,35);
-     
-
+   
     
     save_table("tablee.txt",head);
 
@@ -132,6 +175,7 @@ int main(){
                 update_item(head,name,field,field_val);
                 save_table("tablee.txt",head);
                 check_stock(head);
+                
 
             }
         }
@@ -160,6 +204,7 @@ int main(){
         }
 
         if(_stricmp(command,"Exit")==0){
+            save_table("tablee.txt",head);
             break;
         }
 
